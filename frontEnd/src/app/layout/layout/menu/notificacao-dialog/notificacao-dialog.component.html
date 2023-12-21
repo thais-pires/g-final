@@ -1,0 +1,6 @@
+<h2>Produtos com Garantia Próxima ao Fim</h2>
+<ul>
+  <li *ngFor="let produto of produtosNotificados$ | async">
+    {{ produto.nome }} - {{ produto.dataFimGarantia | date: 'shortDate' }}
+  </li>
+</ul>

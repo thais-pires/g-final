@@ -1,0 +1,49 @@
+<div class="container" id="cadastro">
+  <h2>{{ isEditing ? 'Editar Produto' : 'Cadastrar Produto' }}</h2>
+  <form [formGroup]="produtoForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Nome do Produto" formControlName="nome" />
+      <mat-error *ngIf="produtoForm.get('nome')?.hasError('required')">O nome é obrigatório</mat-error>
+      <mat-error *ngIf="produtoForm.get('nome')?.hasError('invalidString')">
+        {{ produtoForm.get('nome')?.getError('invalidString') }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Data de Compra" formControlName="dataCompra" [matDatepicker]="picker" [min]="getDateMin()" [max]="getDateMax()"/>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="produtoForm.get('dataCompra')?.hasError('required')">A data de compra é obrigatória</mat-error>
+      <mat-error *ngIf="produtoForm.get('dataCompra')?.hasError('invalidDate')">
+        {{ produtoForm.get('dataCompra')?.getError('invalidDate') }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Duração da Garantia (em meses)" formControlName="duracaoGarantiaMeses"/>
+      <mat-error *ngIf="produtoForm.get('duracaoGarantiaMeses')?.hasError('required')">A duração é obrigatória</mat-error>
+      <mat-error *ngIf="produtoForm.get('duracaoGarantiaMeses')?.hasError('invalidNumber')">
+        {{ produtoForm.get('duracaoGarantiaMeses')?.getError('invalidNumber') }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Marca</mat-label>
+      <mat-select formControlName="marcaId">
+        <mat-option *ngFor="let marca of marcas" [value]="marca.id">
+          {{ marca.nome }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="produtoForm.get('marcaId')?.hasError('required')">A marca é obrigatória</mat-error>
+    </mat-form-field>
+
+    <div class="button-container">
+      <button mat-raised-button color="primary" type="submit">
+        {{ isEditing ? 'Atualizar' : 'Cadastrar' }}
+      </button>
+      <button mat-button color="warn" type="button" (click)="onCancel()">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

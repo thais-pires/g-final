@@ -1,0 +1,50 @@
+/* Estilo global */
+body {
+  font-family: 'Roboto', sans-serif; /* Substitua pela fonte desejada */
+  margin: 0;
+  padding: 0;
+}
+
+/* Container principal */
+.container {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Centraliza o container na tela */
+}
+
+#cadastro {
+max-width: 700px;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+/* Botões */
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  margin-left: 10px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+  /* Estilos para telas menores que 600px */
+  .container {
+    margin: 10px;
+    padding: 10px;
+  }
+}

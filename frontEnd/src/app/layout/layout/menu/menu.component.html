@@ -1,0 +1,8 @@
+<mat-toolbar color="primary" class="full-width-toolbar">
+  <span class="title">Controle Garantias</span>
+  <button mat-icon-button [matBadge]="quantidadeNotificacoes" matBadgeColor="warn" (click)="abrirDialog()">
+    <mat-icon>notifications</mat-icon>
+  </button>
+  <button mat-button routerLink="/cadastrar">Cadastro</button>
+  <button mat-button routerLink="">Listagem</button>
+</mat-toolbar>

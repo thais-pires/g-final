@@ -1,0 +1,46 @@
+{
+  "produtos": [
+    {
+      "id": 3,
+      "nome": "Televisão",
+      "dataCompra": "2021-06-11",
+      "duracaoGarantiaMeses": "5",
+      "dataFimGarantia": "2021-11-11T00:00:00.000Z"
+    },
+    {
+      "id": 13,
+      "nome": "Smartwatch",
+      "dataCompra": "2023-11-01T03:00:00.000Z",
+      "duracaoGarantiaMeses": "6",
+      "dataFimGarantia": "2024-05-01T03:00:00.000Z"
+    },
+    {
+      "id": 14,
+      "nome": "PC",
+      "dataCompra": "2021-01-05T03:00:00.000Z",
+      "duracaoGarantiaMeses": "6",
+      "dataFimGarantia": "2021-07-05T03:00:00.000Z"
+    },
+    {
+      "id": 15,
+      "nome": "Notebook",
+      "dataCompra": "2022-02-09T03:00:00.000Z",
+      "duracaoGarantiaMeses": "36",
+      "dataFimGarantia": "2025-02-09T03:00:00.000Z"
+    },
+    {
+      "id": 18,
+      "nome": "ti",
+      "dataCompra": "2023-11-09T03:00:00.000Z",
+      "duracaoGarantiaMeses": "12",
+      "dataFimGarantia": "2024-11-09T03:00:00.000Z"
+    },
+    {
+      "id": 19,
+      "nome": "pp",
+      "dataCompra": "2023-11-03T03:00:00.000Z",
+      "duracaoGarantiaMeses": "6",
+      "dataFimGarantia": "2024-05-03T03:00:00.000Z"
+    }
+  ]
+}

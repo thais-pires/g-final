@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>Detalhes da Marca</h2>
+<div mat-dialog-content class="marca-details">
+  <p><strong>Nome:</strong> {{ data.marca.nome }}</p>
+  <p><strong>Website:</strong> <a href="{{ data.marca.website }}" target="_blank">{{ data.marca.website }}</a></p>
+  <p><strong>Email:</strong> <a [href]="'mailto:' + data.marca.email">{{ data.marca.email }}</a></p>
+</div>
+<div mat-dialog-actions class="dialog-actions">
+  <button mat-button (click)="closeDialog()">Fechar</button>
+</div>

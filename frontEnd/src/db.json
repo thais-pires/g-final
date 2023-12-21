@@ -1,0 +1,34 @@
+{
+  {
+    "marcas": [
+      {
+        "nome": "Apple",
+        "website": "https://www.apple.com",
+        "email": "info@apple.com"
+      },
+      {
+        "nome": "Samsung",
+        "website": "https://www.samsung.com",
+        "email": "support@samsung.com"
+      },
+      {
+        "nome": "Microsoft",
+        "website": "https://www.microsoft.com",
+        "email": "contact@microsoft.com"
+      }
+    ]
+  }
+    {
+      "nome": "Marca A",
+      "contato": "contato@marcaa.com"
+    },
+    {
+      "nome": "Marca B",
+      "contato": "contato@marcab.com"
+    },
+    {
+      "nome": "Marca C",
+      "contato": "contato@marcac.com"
+    }
+  ]
+}

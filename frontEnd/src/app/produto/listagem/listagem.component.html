@@ -1,0 +1,69 @@
+<div class="container" fxLayout="column">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <h2>Listagem de Produtos</h2>
+    <button mat-raised-button color="primary" routerLink="/cadastrar">Cadastro</button>
+  </div>
+  <mat-form-field class="search-input" appearance="outline">
+    <mat-icon matPrefix>search</mat-icon>
+    <input matInput (keyup)="aplicarFiltro($event)" placeholder="Filtrar produtos" />
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+      <td mat-cell *matCellDef="let produto">{{ produto.id }}</td>
+    </ng-container>
+
+    <!-- Nome Column -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome</th>
+      <td mat-cell *matCellDef="let produto" >{{ produto.nome }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="marca">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Marca</th>
+      <td mat-cell *matCellDef="let produto">
+        <button mat-button (click)="openMarcaDialog(produto.marca)">
+          {{ produto.marca?.nome || 'Nenhuma' }}        </button>
+      </td>
+    </ng-container>
+
+    <!-- Data de Compra Column -->
+    <ng-container matColumnDef="dataCompra">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Data de Compra</th>
+      <td mat-cell *matCellDef="let produto" >{{ produto.dataCompra | date: "shortDate"}}</td>
+    </ng-container>
+
+    <!-- Duração da Garantia Column -->
+    <ng-container matColumnDef="duracaoGarantiaMeses">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header >Duração da Garantia (meses)</th>
+      <td mat-cell *matCellDef="let produto" >{{ produto.duracaoGarantiaMeses }}</td>
+    </ng-container>
+
+    <!-- Data de Fim de Garantia Column -->
+    <ng-container matColumnDef="dataFimGarantia">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header >Data de Fim de Garantia</th>
+      <td mat-cell *matCellDef="let produto" >{{ produto.dataFimGarantia | date: "shortDate"}}</td>
+    </ng-container>
+
+    <!-- Options Column -->
+    <ng-container matColumnDef="options">
+      <th mat-header-cell *matHeaderCellDef >Opções</th>
+      <td mat-cell *matCellDef="let produto" >
+        <button mat-icon-button color="primary" (click)="editarProduto(produto.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="removerProduto(produto.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+</div>
